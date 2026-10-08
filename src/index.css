@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@keyframes titleMarquee {
+  0%, 15% {
+    transform: translateX(0%);
+  }
+  85%, 100% {
+    transform: translateX(var(--marquee-distance, -40%));
+  }
+}
+
+.scrolling-title-inner {
+  display: inline-block;
+  white-space: nowrap;
+  animation: titleMarquee 6s ease-in-out infinite alternate;
+}
+
+.scrolling-title-container:hover .scrolling-title-inner {
+  animation-play-state: running;
+}
